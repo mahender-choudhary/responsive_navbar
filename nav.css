@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: black;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+}
+
+.logo{
+    font-size: 30px;
+    color: magenta;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+
+li{
+    margin: 20px;
+    color: white;
+}
+li a{
+    text-decoration: none;
+}
+
+    /* list hover underline */
+
+span{
+    position: relative;
+}
+
+.content{
+    color: white;
+    font-family: 'Stoke', serif;
+}
+span::after{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 4px;
+    background-color:magenta;
+    left: 50px;
+    bottom: -6px;
+    transition: all 0.3s ease-in-out;
+
+}
+span:hover{
+    cursor: pointer;
+}
+span:hover::after{
+    cursor: pointer;
+    width: 100%;
+    left: 0;
+}
+
+.checkbtn{
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+#check:checked ~ ul{
+    left:0
+}
+#check{
+    display: none;
+}
+
+@media (max-width: 814px) {
+    nav ul{
+        position: fixed;
+        top:60px;
+        left:-100%;
+        text-align: center;
+        background-color: #111;
+        height: 100%;
+        width: 100%;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    nav ul li{
+        margin: 40px 0px;
+    }
+
+    .list, li:hover{
+        color: aqua;
+    }
+    .checkbtn{
+        display: block;
+    }
+    #check:checked ~ ul{
+        left:0
+    }
+    #check:checked ~ .checkbtn i:before{
+        content: "\f00d";
+    }
+}
+
+/* about me page css */
+
+.about-heading{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
